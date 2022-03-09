@@ -14,7 +14,7 @@
  
   Authors in chronological order of contribution:
   Author 1: Timothy E. Riedel
-  Author 2: ?????????
+  Author 2: Leyna Pham
   
   References:
   http://docs.webplatform.org/wiki/concepts/programming/drawing_images_onto_canvas#Loading_the_image_programmatically
@@ -24,10 +24,10 @@
   http://stackoverflow.com/questions/11929099/html5-canvas-drawimage-ratio-bug-ios
   
   Brief Description of Goal of Code:
-  blah, blah, blah,
+  The goal of this code is to be able to upload an image, display it, and display it in blue next to it.
  
   Known Issues:
-  blah, blah, blah, blah
+  Getting the picture to upload 
 -->
 
  <head>
@@ -103,11 +103,11 @@
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
           
          var secondCanvas = document.getElementById('secondCanvas');
-         var secondContext = secondCanvas.getContext('2d');
+         var secondContext = secondCanvas.getContext("2d");
          var imageData= context.getImageData(0,0,600,500);
          var data = imageData.data;
          
-         for(var i = 0, n = data.length; i < n; i+=4)
+         for(var i = 0, n = data.length; i < n; i += 4)
             data[i] = 0;
             data[i + 1] = 0;
         }
