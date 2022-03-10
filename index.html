@@ -151,7 +151,15 @@
         context.fillStyle = "black";
         context.fillText("Original image will go here", 10, 20);
       </script>
-
+      <canvas id="secondCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
+      </script>
+        var secondCanvas = document.getElementByID('secondCanvas');
+        var secondContext = secondCanvas.getContext("2d");
+        secondContext.font = '20pt Calibri';
+        secondContext.fillStyle = "black";
+        secondContext.fillText("New Image", 10,20);
+      </script>
+     
     </div><!-- /content -->
     <div data-role="footer" data-position="fixed">
       <p>DIY Diagnostics</p>
