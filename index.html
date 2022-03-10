@@ -102,17 +102,18 @@
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
           
-         var secondCanvas = document.getElementById('secondCanvas');
-         var secondContext = secondCanvas.getContext("2d");
-         var imageData= context.getImageData(0,0,600,500);
-         var data = imageData.data;
+         var secondCanvas = document.getElementById('secondCanvas'); //this is the code for the second canvas
+         var secondContext = secondCanvas.getContext("2d"); //this is the context for the second canvas
+         var imageData= context.getImageData(0,0,600,500); //this gets the context for the image
+         var data = imageData.data; //this gets the pixel data of the canvas
          
+         //this code changes the image to blue
          for(var i = 0, n = data.length; i < n; i += 4){
-            data[i] = 0;
-            data[i + 1] = 0;
+            data[i] = 0; //this sets the red insensity to 0 (red will not show)
+            data[i + 1] = 0; //this sets the green intensity to 0 (green will not show)
         }
           
-         secondContext.putImageData(imageData,0,0);
+         secondContext.putImageData(imageData,0,0); //this will apply all functions to the second canvas
        
         } // end of img.onload
         
@@ -138,28 +139,32 @@
     <div data-role="content">	
       <h2>Push button to take picture.</h2>
       <div>
+       <!--this allows for a file to upload-->
         Press orange button to create or choose image file:
-        <input type="file" id="fileInput" STYLE="background-color: #FF6600;">
+        <input type="file" id="fileInput" STYLE="background-color: #FF6600;"
       </div>
       <div id="messageDisplayArea"></div>
       
-      <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
+      <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas> <!--size of canvas-->
       <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
-        var canvas = document.getElementById('myCanvas');
-        var context = canvas.getContext("2d");
-        context.font = '20pt Calibri';
-        context.fillStyle = "black";
-        context.fillText("Original image will go here", 10, 20);
+        var canvas = document.getElementById('myCanvas'); //this calls the canvas
+        var context = canvas.getContext("2d"); //this gives the context for the canvas
+        context.font = '20pt Calibri'; //this is the size and font that will appear
+        context.fillStyle = "black"; //this is the color of the font
+        context.fillText("Original image will go here", 10, 20); //these are the coordinates of the image
       </script>
+      
+      <!--this is the new code for the second canvas-->
       <canvas id="secondCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
-      <script>
+      <script> 
         var secondCanvas = document.getElementByID('secondCanvas');
         var secondContext = secondCanvas.getContext("2d");
         secondContext.font = '20pt Calibri';
         secondContext.fillStyle = "black";
         secondContext.fillText("New Image", 10,20);
       </script>
-     
+      <!--end of code for second canvas-->
+
     </div><!-- /content -->
     <div data-role="footer" data-position="fixed">
       <p>DIY Diagnostics</p>
